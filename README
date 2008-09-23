@@ -73,8 +73,8 @@
 
   {project_path}/test/acceptance/input
 
-examples::
-  sfPHPFitPlugin/test_example/acceptance/input
+examples
+:  sfPHPFitPlugin/test_example/acceptance/input
 
 * testcase index
 
