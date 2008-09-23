@@ -1,0 +1,17 @@
+autoload:
+  sfPhpFit:
+    name: sfPHPFit plugin libs
+    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib
+  reader:
+    name: PHPFit fit reader
+    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/reader
+  wikis:
+    name: wikis
+    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/wiki
+  phpfit:
+    name: PHPFIT core files
+    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/vendor/phpfit
+  syntax_wiki:
+    name: HatenaSyntx(wiki syntax)
+    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/vendor/HatenaSyntax
+    recursive: on

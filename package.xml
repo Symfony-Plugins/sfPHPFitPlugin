@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+  <name>sfPHPFitPlugin</name>
+  <channel>pear.symfony-project.com</channel>
+  <summary>acceptance test(FIT) plugin</summary>
+  <description>The sfPHPFitPlugin is a symfony plugin for FIT(Framework for Integrated Tests)</description>
+  <lead>
+    <name>Yusuke Hata</name>
+    <user>nowelium</user>
+    <email>nowelium@gmail.com</email>
+    <active>yes</active>
+  </lead>
+  <date>2008-09-22</date>
+  <time>10:35:31</time>
+  <version>
+    <release>0.0.2</release>
+    <api>0.0.2</api>
+  </version>
+  <stability>
+    <release>beta</release>
+    <api>beta</api>
+  </stability>
+  <license>BSD license</license>
+  <notes>-</notes>
+  <contents>
+    <dir name="/">
+      <file role="data" name="README" />
+      <file role="data" name="LICENSE" />
+      <!-- {{{ config -->
+      <dir name="config">
+        <file role="data" name="config.php" />
+        <file role="data" name="autoload.yml" />
+      </dir><!-- }}} config -->
+      <!-- {{{ lib -->
+      <dir name="lib">
+        <file role="data" name="PHPFitIndexObject.php" />
+        <file role="data" name="PHPFitInput.php" />
+        <file role="data" name="PHPFitProcess.php" />
+        <file role="data" name="PHPFitReader.php" />
+        <file role="data" name="PHPFitTempFile.php" />
+        <file role="data" name="PHPFitWiki.php" />
+        <file role="data" name="sfPHPFitAction.class.php" />
+        <file role="data" name="sfPHPFitRouting.class.php" />
+        <file role="data" name="sfPHPFitView.class.php" />
+        <!-- {{{ lib/proc -->
+        <dir name="proc">
+          <file role="data" name="PHPFitHTMLProcess.php" />
+          <file role="data" name="PHPFitWikiProcess.php" />
+        </dir><!-- }}} lib/proc -->
+        <!-- {{{ lib/reader -->
+        <dir name="reader">
+          <file role="data" name="PHPFitAggregateReader.php" />
+          <file role="data" name="PHPFitDirectoryReader.php" />
+        </dir><!-- }}} lib/reader -->
+        <!-- {{{ lib/wiki -->
+        <dir name="wiki">
+          <file role="data" name="PHPFitWiki_Hatena.php" />
+          <file role="data" name="PHPFitWiki_Textile.php" />
+        </dir>
+        <!-- }}} lib/wiki -->
+        <!-- {{{ lib/vendor -->
+        <dir name="vendor">
+          <!-- {{{ HatenaSyntax -->
+          <dir name="HatenaSyntax">
+            <file role="data" name="HatenaSyntax.php" />
+          </dir>
+          <!-- }}} HatenaSyntax -->
+          <!-- {{{ PHPFit -->
+          <dir name="phpfit">
+            <!-- phpfit/ -->
+            <file role="data" name="PHPFIT.php" />
+            <file role="data" name="phpfit-fitnesse.php" />
+            <file role="data" name="phpfit-run" />
+            <!-- {{{ phpfit/doc -->
+            <dir name="doc">
+              <file role="data" name="CHANGELOG" />
+              <file role="data" name="phpDocumentor.ini" />
+              <file role="data" name="README" />
+              <file role="data" name="VERSION" />
+            </dir><!-- }}} phpfit/doc -->
+            <!-- {{{ phpfit/eg -->
+            <dir name="eg">
+              <file role="data" name="ArithmeticColumnFixture.php" />
+              <file role="data" name="ArithmeticFixture.php" />
+              <file role="data" name="Calculator.php" />
+              <file role="data" name="WeeklyCompensation.php" />
+              <file role="data" name="WeeklyTimesheet.php" />
+              <!-- {{{ phpfit/eg/hoteles -->
+              <dir name="hoteles">
+                <file role="data" name="CarritoLista.php" />
+                <file role="data" name="Compra.php" />
+                <file role="data" name="CompraLista.php" />
+                <file role="data" name="Precios.php" />
+                <file role="data" name="Temporada.php" />
+                <!-- {{{ phpfit/eg/hoteles/model -->
+                <dir name="model">
+                  <file role="data" name="Carrito.php" />
+                  <file role="data" name="CatalogoPrecios.php" />
+                  <file role="data" name="PonderadorFecha.php" />
+                </dir><!-- }}} phpfit/eg/hoteles/model -->
+              </dir><!-- }}} phpfit/eg/hoteles -->
+              <!-- {{{ phpfit/eg/music -->
+              <dir name="music">
+                <file role="data" name="Browser.php" />
+                <file role="data" name="Dialog.php" />
+                <file role="data" name="Display.php" />
+                <file role="data" name="Music.php" />
+                <file role="data" name="Music.txt" />
+                <file role="data" name="MusicLibrary.php" />
+                <file role="data" name="MusicPlayer.php" />
+                <file role="data" name="Realtime.php" />
+                <file role="data" name="Simulator.php" />
+              </dir><!-- }}} phpfit/eg/music -->
+              <!-- {{{ phpfit/eg/net -->
+              <dir name="net">
+                <file role="data" name="Simulator.php" />
+              </dir><!-- }}} phpfit/eg/net -->
+            </dir><!-- }}} phpfit/eg -->
+            <!-- {{{ phpfit/examples -->
+            <dir name="examples">
+              <file role="data" name="examples.php" />
+              <file role="data" name="run-web.php" />
+              <!-- {{{ phpfit/examples/input -->
+              <dir name="input">
+                <file role="data" name="arithmetic.html" />
+                <file role="data" name="CalculatorExample.html" />
+                <file role="data" name="compensation.html" />
+                <file role="data" name="ejemplo.fitnesse" />
+                <file role="data" name="MusicExample.html" />
+                <file role="data" name="MusicExampleWithErrors.html" />
+                <file role="data" name="NetworkExample.html" />
+                <file role="data" name="run.cgi" />
+                <!-- {{{ phpfit/examples/input/files -->
+                <dir name="files">
+                  <file role="data" name="hp35bk.jpg" />
+                </dir><!-- }}} phpfit/examples/input/files -->
+              </dir><!-- }}} phpfit/examples/input -->
+              <!-- {{{ phpfit/examples/output -->
+              <dir name="output">
+                <file role="data" name="arithmetic.html" />
+                <file role="data" name="CalculatorExample.html" />
+                <file role="data" name="compensation.html" />
+                <file role="data" name="MusicExample.html" />
+                <file role="data" name="MusicExampleWithErrors.html" />
+                <file role="data" name="NetworkExample.html" />
+              </dir><!-- }}} phpfit/examples/output -->
+            </dir><!-- }}} phpfit/examples -->
+            <!-- {{{ phpfit/PHPFIT -->
+            <dir name="PHPFIT">
+              <file role="data" name="Comparable.php" />
+              <file role="data" name="Counts.php" />
+              <file role="data" name="FileRunner.php" />
+              <file role="data" name="FitServer.php" />
+              <file role="data" name="Fixture.php" />
+              <file role="data" name="FixtureLoader.php" />
+              <file role="data" name="Parse.php" />
+              <file role="data" name="RunTime.php" />
+              <file role="data" name="ScientificDouble.php" />
+              <file role="data" name="TypeAdapter.php" />
+              <!-- {{{ phpfit/PHPFIT/Exception -->
+              <dir name="Exception">
+                <file role="data" name="FileIO.php" />
+                <file role="data" name="Parse.php" />
+              </dir><!-- }}} phpfit/PHPFIT/Exception -->
+              <!-- {{{ phpfit/PHPFIT/Fixture -->
+              <dir name="Fixture">
+                <file role="data" name="Action.php" />
+                <file role="data" name="Column.php" />
+                <file role="data" name="Primitive.php" />
+                <file role="data" name="Row.php" />
+                <file role="data" name="Summary.php" />
+                <file role="data" name="TimedAction.php" />
+              </dir><!-- }}} phpfit/PHPFIT/Fixture -->
+              <!-- {{{ phpfit/PHPFIT/TypeAdapter -->
+              <dir name="TypeAdapter">
+                <file role="data" name="Boolean.php" />
+                <file role="data" name="Double.php" />
+                <file role="data" name="Integer.php" />
+                <file role="data" name="ScientificDouble.php" />
+                <file role="data" name="String.php" />
+              </dir><!-- }}} phpfit/PHPFIT/TypeAdapter -->
+            </dir><!-- }}} phpfit/PHPFIT -->
+            <!-- {{{ phpfit/tests -->
+            <dir name="tests">
+              <file role="data" name="AllTest.php" />
+              <file role="data" name="ExampleTest.php" />
+              <file role="data" name="FileRunnerTest.php" />
+              <file role="data" name="FixtureLoaderTest.php" />
+              <file role="data" name="FixtureTest.php" />
+              <file role="data" name="FrameworkTest.php" />
+              <file role="data" name="ParseTest.php" />
+              <file role="data" name="RowFixtureTest.php" />
+              <!-- {{{ phpfit/tests/fixtures -->
+              <dir name="fixtures">
+                <file role="data" name="sample_pear.php" />
+                <file role="data" name="sample.php" />
+              </dir><!-- }}} phpfit/tests/fixtures -->
+            </dir><!-- }}} phpfit/tests -->
+            <!-- {{{ phpfit/tools -->
+            <dir name="tools">
+              <!-- {{{ phpfit/tools/simpletest -->
+              <dir name="simpletest">
+                <file role="data" name="authentication.php" />
+                <file role="data" name="browser.php" />
+                <file role="data" name="dumper.php" />
+                <file role="data" name="encoding.php" />
+                <file role="data" name="errors.php" />
+                <file role="data" name="expectation.php" />
+                <file role="data" name="form.php" />
+                <file role="data" name="frames.php" />
+                <file role="data" name="HELP_MY_TESTS_DONT_WORK_ANYMORE" />
+                <file role="data" name="http.php" />
+                <file role="data" name="LICENSE" />
+                <file role="data" name="mock_objects.php" />
+                <file role="data" name="options.php" />
+                <file role="data" name="page.php" />
+                <file role="data" name="parser.php" />
+                <file role="data" name="README" />
+                <file role="data" name="remote.php" />
+                <file role="data" name="reporter.php" />
+                <file role="data" name="runner.php" />
+                <file role="data" name="scorer.php" />
+                <file role="data" name="shell_tester.php" />
+                <file role="data" name="simple_test.php" />
+                <file role="data" name="socket.php" />
+                <file role="data" name="tag.php" />
+                <file role="data" name="unit_tester.php" />
+                <file role="data" name="url.php" />
+                <file role="data" name="user_agent.php" />
+                <file role="data" name="VERSION" />
+                <file role="data" name="web_tester.php" />
+                <file role="data" name="xml.php" />
+                <!-- {{{ phpfit/tools/simpletest/extensions -->
+                <dir name="extensions">
+                  <file role="data" name="pear_test_case.php" />
+                  <file role="data" name="phpunit_test_case.php" />
+                </dir><!-- }}} phpfit/tools/simpletest/extensions -->
+              </dir><!-- }}} phpfit/tools/simpletest -->
+            </dir><!-- }}} phpfit/tools -->
+          </dir><!-- }}} PHPFit -->
+        </dir><!-- }}} lib/vendor -->
+      </dir><!-- }}} lib -->
+      <!-- {{{ modules -->
+      <dir name="modules">
+        <!-- {{{ modules/phpFit -->
+        <dir name="phpFit">
+          <!-- {{{ modules/phpFit/actions -->
+          <dir name="actions">
+            <file role="data" name="indexAction.class.php" />
+            <file role="data" name="processAction.class.php" />
+          </dir><!-- }}} modules/phpFit/actions -->
+          <!-- {{{ modules/phpFit/templates -->
+          <dir name="templates">
+            <file role="data" name="indexSuccess.php" />
+            <file role="data" name="processSuccess.php" />
+          </dir><!-- }}} modules/phpFit/templates -->
+        </dir><!-- }}} modules/phpFit -->
+      </dir><!-- }}} modules -->
+      <!-- {{{ templates -->
+      <dir name="templates">
+        <file role="data" name="phpFitLayout.php" />
+      </dir><!-- }}} templates -->
+      <!-- {{{ test_example -->
+      <dir name="test_example">
+        <file role="data" name="acceptance/fixture/eg/TestName.php" />
+        <file role="data" name="acceptance/input/example.html" />
+        <file role="data" name="acceptance/input/example.wiki" />
+      </dir><!-- }}} test_example -->
+    </dir>
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.2.6</min>
+      </php>
+      <pearinstaller>
+        <min>1.4.1</min>
+      </pearinstaller>
+      <package>
+        <name>symfony</name>
+        <channel>pear.symfony-project.com</channel>
+        <min>1.1.0</min>
+        <max>1.2.0</max>
+        <exclude>1.2.0</exclude>
+      </package>
+    </required>
+  </dependencies>
+  <phprelease />
+  <changelog>
+    <release>
+      <version>
+        <release>0.0.2</release>
+        <api>0.0.2</api>
+      </version>
+      <stability>
+        <release>beta</release>
+        <api>beta</api>
+      </stability>
+      <date>2008-09-22</date>
+      <license>BSD License</license>
+      <notes>
+        * fix README
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.0.1</release>
+        <api>0.0.1</api>
+      </version>
+      <stability>
+        <release>beta</release>
+        <api>beta</api>
+      </stability>
+      <date>2008-09-22</date>
+      <license>BSD License</license>
+      <notes>
+        * Initial release
+      </notes>
+    </release>
+  </changelog>
+</package>
