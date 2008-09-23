@@ -1,37 +1,33 @@
-# sfPHPFitPlugin #
+sfPHPFitPlugin
+==============
 
-# Installation #
+Installation
+============
 
-* Install the plugin
+Install the plugin
+------------------
 
-{{{
-
+    [shell]
     php symfony plugin-install http://plugins.symfony-project.com/sfPHPFitPlugin
 
-}}}
+Enable the module in your *settings.yml*
+----------------------------------------
 
-* Enable the module in your *settings.yml*
-
-{{{
-
+    [yml]
     dev:
       .settings:
         enabled_modules:        [phpFit]
 
-}}}
+Clear your cache
+----------------
 
-* Clear your cache
-
-{{{
-
+    [shell]
     php symfony cc
 
-}}}
+Add the settings *app.yml*
+--------------------------
 
-* Add the settings *app.yml*
-
-{{{
-
+    [yml]
     dev:
       fit:
         view_class: sfPHPFit
@@ -65,39 +61,50 @@
             param:
               class: PHPFitWiki_Textile
 
-}}}
 
-# Usage #
+Usage
+=====
 
-* create HTML test case
+create HTML test case
+---------------------
 
-  {project_path}/test/acceptance/input
+    {project_path}/test/acceptance/input
 
 examples
 :  sfPHPFitPlugin/test_example/acceptance/input
 
-* testcase index
 
-  http://{your symfony app path}/fit
+access testcase index
+--------------
+
+    http://{your symfony app path}/fit
 
 or
 
-  http://{your symfony app path}/fit/index
+    http://{your symfony app path}/fit/index
 
-* run testcase
 
-  http://{your symfony app path}/fit/process?in=example.html&type=html
+run testcase
+------------
+
+    http://{your symfony app path}/fit/process?in=example.html&type=html
   
-* create fixture
+create fixture
+--------------
 
-  {project_path}/test/acceptance/fixture
+    {project_path}/test/acceptance/fixture
 
-  examples: sfPHPFitPlugin/test_example/acceptance/fixture
+examples
+: sfPHPFitPlugin/test_example/acceptance/fixture
 
-# Includes package #
+
+
+Includes vendors
+================
 
 PHPFit
 :  <http://developer.berlios.de/projects/phpfit/>
 
 HatenaSyntax
 :  <http://coderepos.org/share/wiki/HatenaSyntax>
+

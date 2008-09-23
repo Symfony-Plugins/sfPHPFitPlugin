@@ -77,20 +77,20 @@ class HatenaSyntax
   }
   public function addFirstCharSyntax(HatenaSyntax_FirstCharSyntaxInterface $syntax)
   {
-    $this->firstCharSyntaxes[$syntax->getIdentifier()] =& $syntax;
+    $this->firstCharSyntaxes[$syntax->getIdentifier()] = $syntax;
     return $this;
   }
   public function addInlineSyntax(HatenaSyntax_InlineSyntaxInterface $syntax)
   {
-    $this->inlineSyntaxes[] =& $syntax;
+    $this->inlineSyntaxes[] = $syntax;
     return $this;
   }
   public function parseStructure($contents)
   {
-    $openingTags =& $this->openingTags;
-    $closingTags =& $this->closingTags;
-    $markupSyntaxes =& $this->markupSyntaxes;
-    $firstCharSyntaxes =& $this->firstCharSyntaxes;
+    $openingTags = $this->openingTags;
+    $closingTags = $this->closingTags;
+    $markupSyntaxes = $this->markupSyntaxes;
+    $firstCharSyntaxes = $this->firstCharSyntaxes;
     
     $lines = $this->getLines($contents);
     $result = array();
@@ -100,7 +100,7 @@ class HatenaSyntax
       // ブロック文法の種類の確認
       // MarkupSyntaxだったら
       if(isset($openingTags[$lines[$i]])) {
-        $block['syntax'] =& $markupSyntaxes[$lines[$i]];
+        $block['syntax'] = $markupSyntaxes[$lines[$i]];
         $block['type'] = 'markup';
         
         for($i++; $i < $length; $i++) {
@@ -112,7 +112,7 @@ class HatenaSyntax
       else {
         $firstChar = $this->getFirstCharSyntaxIdentifier($lines[$i]);
         
-        $block['syntax'] =& $firstCharSyntaxes[$firstChar];
+        $block['syntax'] = $firstCharSyntaxes[$firstChar];
         $block['type'] = 'firstchar';
         
         for(; $i < $length; $i++) {
@@ -299,7 +299,7 @@ class HatenaSyntax_Footnote
       $num = count($this->footnotes);
       $id = $this->id;
       $line = $result[0] 
-            . '(<a href="#f' . $num . $id . '" name ="#b' . $num  . $id 
+            . '(<a href="#f' . $num . $id . '" name ="b' . $num  . $id 
             .'" title="' . $result[1] . '">*' . $num . '</a>)' . $result[2] . PHP_EOL;
     }
     
@@ -333,7 +333,7 @@ class HatenaSyntax_Footnote
     $id = $this->id;
     
     foreach($footnotes as $num => $note)
-      $result .= '<p><a href="#b' . ++$num  . $id . '" name="#f' . $num  . $id . '">*' . $num 
+      $result .= '<p><a href="#b' . ++$num  . $id . '" name="f' . $num  . $id . '">*' . $num 
               . '</a>: ' . $note . '</p>' .  PHP_EOL;
     
     $result .= '</div>' . PHP_EOL;
