@@ -60,6 +60,7 @@ Add the settings *app.yml*
             class: myPHPFitDatabaseProcess
             param:
               class: PHPFitWiki_Textile
+              database_name: mydb
 
 
 Usage

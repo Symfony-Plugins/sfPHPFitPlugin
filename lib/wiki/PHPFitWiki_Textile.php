@@ -9,7 +9,7 @@ class PHPFitWiki_Textile extends HatenaSyntax implements PHPFitWiki {
     
     $this->options = $options;
     
-    $this->addFirstCharSyntax(new HatenaSyntax_Head($this->getOption('headlevel', 3)));
+    $this->addFirstCharSyntax(new PHPFitWiki_Textile_HeadSyntax($this->getOption('headlevel', 3)));
     $this->addFirstCharSyntax(new PHPFitWiki_Textile_TableSyntax());
     $this->addFirstCharSyntax(new HatenaSyntax_DefinitionList());
     $this->addFirstCharSyntax(new HatenaSyntax_Default());
@@ -81,7 +81,36 @@ class PHPFitWiki_Textile_TableSyntax extends HatenaSyntax_Table {
  */
 class PHPFitWiki_Textile_LinkSyntax implements HatenaSyntax_InlineSyntaxInterface {
   public function parse($line){
-    return preg_replace('/\[\[([^\]]*)\]\]/', '<a href="$1">$1</a>', $line);
+    if(1 === preg_match('/\[\[([^\]]*)\]\]/', $line, $outsideMatch)){
+      if(1 === preg_match('/(.+)\|(.+)/', $outsideMatch[1], $insideMatch)){
+        return '<a href="' . $insideMatch[1] . '">' . $insideMatch[2] . '</a>';
+      }
+      return '<a href="' . $outsideMatch[1] . '">' . $outsideMatch[1] . '</a>';
+    }
+    return $line;
+  }
+}
+
+/**
+ * @author yusuke.hata
+ *
+ */
+class PHPFitWiki_Textile_HeadSyntax extends HatenaSyntax_Head {
+  public function getIdentifier(){
+    return 'h';
+  }
+  public function parse($line) {
+    $base = $this->baseLevel;
+    $level = $this->countLevel($line);
+    
+    $this->result .= '<h' . ($base + $level - 1) . '>';
+    // (h{\d}.) 以降の文字列のみ対象
+    $this->result .= substr($line, 3);
+    $this->result .= '</h' . ($base + $level - 1) . '>';
+    $this->result .= PHP_EOL;
+  }
+  public function countLevel($line) {
+    return (int) substr($line, 1, 1);
   }
 }
 
@@ -99,8 +128,7 @@ class PHPFitWiki_Textile_ListSyntax extends HatenaSyntax_List {
   public function getIdentifier(){
     return $this->identifier;
   }
-  public function countLevel($line)
-  {
+  public function countLevel($line){
     $level = 0;
     $len = strlen($line);
     for($i = 0; $i < $len; $i++) {

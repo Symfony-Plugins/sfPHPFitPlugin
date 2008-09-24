@@ -14,4 +14,3 @@ autoload:
   syntax_wiki:
     name: HatenaSyntx(wiki syntax)
     path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/vendor/HatenaSyntax
-    recursive: on
