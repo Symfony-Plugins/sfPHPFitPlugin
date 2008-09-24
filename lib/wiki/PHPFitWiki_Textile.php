@@ -81,13 +81,13 @@ class PHPFitWiki_Textile_TableSyntax extends HatenaSyntax_Table {
  */
 class PHPFitWiki_Textile_LinkSyntax implements HatenaSyntax_InlineSyntaxInterface {
   public function parse($line){
-    if(1 === preg_match('/\[\[([^\]]*)\]\]/', $line, $outsideMatch)){
-      if(1 === preg_match('/(.+)\|(.+)/', $outsideMatch[1], $insideMatch)){
-        return '<a href="' . $insideMatch[1] . '">' . $insideMatch[2] . '</a>';
-      }
-      return '<a href="' . $outsideMatch[1] . '">' . $outsideMatch[1] . '</a>';
+    return preg_replace('/\[\[([^\]]*)\]\]/e', 'self::replace(\'$1\')', $line);
+  }
+  protected static function replace($outsideMatch){
+    if(1 === preg_match('/(.+)\|(.+)/', $outsideMatch, $insideMatch)){
+      return '<a href="' . $insideMatch[1] . '">' . $insideMatch[2] . '</a>';
     }
-    return $line;
+    return '<a href="' . $outsideMatch . '">' . $outsideMatch . '</a>';
   }
 }
 
