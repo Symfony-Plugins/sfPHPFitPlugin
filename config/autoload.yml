@@ -1,16 +1,25 @@
 autoload:
   sfPhpFit:
     name: sfPHPFit plugin libs
-    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib
-  reader:
+    path: %SF_PLUGINS_DIR%/sfPHPFitPlugin/lib
+  sfPhpFit_proc:
+    name: PHPFit fit proc
+    path: %SF_PLUGINS_DIR%/sfPHPFitPlugin/lib/proc    
+  sfPhpFit_reader:
     name: PHPFit fit reader
-    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/reader
-  wikis:
+    path: %SF_PLUGINS_DIR%/sfPHPFitPlugin/lib/reader
+  sfPhpFit_wikis:
     name: wikis
-    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/wiki
-  phpfit:
+    path: %SF_PLUGINS_DIR%/sfPHPFitPlugin/lib/wiki
+  sfPhpFit_phpfit:
     name: PHPFIT core files
-    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/vendor/phpfit
-  syntax_wiki:
+    path: %SF_PLUGINS_DIR%/sfPHPFitPlugin/lib/vendor/phpfit
+    exclude:
+      - doc
+      - eg
+      - examples
+      - tests
+      - tools
+  sfPhpFit_syntax_wiki:
     name: HatenaSyntx(wiki syntax)
-    path: %SF_SYMFONY_LIB_DIR%/plugins/sfPHPFitPlugin/lib/vendor/HatenaSyntax
+    path: %SF_PLUGINS_DIR%/sfPHPFitPlugin/lib/vendor/HatenaSyntax
